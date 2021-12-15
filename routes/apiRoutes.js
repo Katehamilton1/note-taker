@@ -11,17 +11,11 @@ const router = require("express").Router();
         response.json(db);
     })
 
-
-
-
     // Retrieves a note with specific id
     router.get("/api/notes/:id",(request, response) => {
         response.json(notes[request.params.id]);
     })
     
-
-
-
 
      // create a new note 
     router.post("api/notes",(request, response) => {
@@ -37,12 +31,12 @@ const router = require("express").Router();
 
 
     // API DELETE note Request 
-    router.delete("/api/notes/id", (request, response)=> {
-        notes.splice(request.params.id, 1);
-        updateDb();
+    router.delete("/api/user/id:", (request, response)=> {
+        notes.splice(request.params.id,1);
+
         console.log("Deleted note with id " + request.params.id);
     });
 
 
-    
+
     module.exports = router;
