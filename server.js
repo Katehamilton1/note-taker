@@ -3,12 +3,15 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 //4. Use a middleware to parse the JSON data
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
-//what folder the browser can see
 app.use(express.static("public"));
 
+// Use apiRoutes
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 

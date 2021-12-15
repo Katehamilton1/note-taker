@@ -1,4 +1,4 @@
-var noteContents = [
+var db = [
     [
         {
             "title":"Test Title",
@@ -13,4 +13,4 @@ var noteContents = [
     ]
 ]
 
-module.exports = noteContents;
+module.exports = db;
