@@ -8,8 +8,7 @@ const router = require("express").Router();
 
 // API GET Request-- find all notes
 router.get("/api/notes", (request, response) => {
-    let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
-    response.json(data);
+    response.json(db);
 })
 
 
