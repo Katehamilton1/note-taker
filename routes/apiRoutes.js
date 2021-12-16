@@ -12,20 +12,12 @@ const router = require("express").Router();
         response.json(db);
     })
 
-    // Retrieves a note with specific id
-    router.get("/api/notes/:id",(request, response) => {
-        response.json(notes[request.params.id]);
-    })
-    
 
      // create a new note 
     router.post("/api/notes",(request, response) => {
-        // set id based on what the next index of the array will be
-        request.body.id = notes.length.toString();
-
-        let notes = createNewNote(request.body, notes);
-        response.json(notes);
-    })
+        db.push(request.body);
+        response.json("saved");
+      });
    
 
     // API DELETE note Request 
