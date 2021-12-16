@@ -36,7 +36,8 @@ router.delete("/api/notes/:id", (request, response) => {
 
     for (let i = 0; i < db.length; i++) {
         if (id === db[i].id) {
-          db.splice(i, 1);
+          db.splice(i, 1)}
+        }
           
     //write to db.json
     fs.writeFileSync("./db/db.json", JSON.stringify(notes), function (err) {
