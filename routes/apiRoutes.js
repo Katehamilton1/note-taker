@@ -14,6 +14,7 @@ router.get("/api/notes", (request, response) => {
 
 // create a new note 
 router.post("/api/notes", (request, response) => {
+request.body.id = uniqid()
     db.push(request.body);
     response.json("saved");
 
@@ -45,6 +46,7 @@ router.delete("/api/notes/:id", (request, response) => {
 
     response.json(notes);
 });
+
 
 
 
